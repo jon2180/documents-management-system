@@ -25,8 +25,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66e1f5c9-f797-4576-99bb-b318460d03d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/tdms_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/tdms_Web_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacher-doc-manage-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/documents-management-system.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,53 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="documents-management-system" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="documents-management-system" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -143,7 +192,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587609987660</updated>
-      <workItem from="1587609992343" duration="4248000" />
+      <workItem from="1587609992343" duration="4629000" />
     </task>
     <servers />
   </component>
@@ -194,54 +243,54 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="473" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1587610492849" />
-    <state width="1201" height="227" key="GridCell.Tab.0.bottom" timestamp="1587613644551">
+    <state width="1201" height="227" key="GridCell.Tab.0.bottom" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613644551" />
-    <state width="1201" height="227" key="GridCell.Tab.0.center" timestamp="1587613644551">
+    <state width="1201" height="227" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.0.center" timestamp="1587614580925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1587613644551" />
-    <state width="1201" height="227" key="GridCell.Tab.0.left" timestamp="1587613644551">
+    <state width="1201" height="227" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1587614580925" />
+    <state width="1201" height="227" key="GridCell.Tab.0.left" timestamp="1587614580925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1587613644551" />
-    <state width="1201" height="227" key="GridCell.Tab.0.right" timestamp="1587613644551">
+    <state width="1201" height="227" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1587614580925" />
+    <state width="1201" height="227" key="GridCell.Tab.0.right" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1587613644551" />
-    <state width="1201" height="227" key="GridCell.Tab.1.bottom" timestamp="1587613644554">
+    <state width="1201" height="227" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.1.bottom" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613644554" />
-    <state width="1201" height="227" key="GridCell.Tab.1.center" timestamp="1587613644554">
+    <state width="1201" height="227" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.1.center" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1587613644554" />
-    <state width="1201" height="227" key="GridCell.Tab.1.left" timestamp="1587613644553">
+    <state width="1201" height="227" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.1.left" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1587613644553" />
-    <state width="1201" height="227" key="GridCell.Tab.1.right" timestamp="1587613644554">
+    <state width="1201" height="227" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.1.right" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1587613644554" />
-    <state width="1201" height="227" key="GridCell.Tab.2.bottom" timestamp="1587613644553">
+    <state width="1201" height="227" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.2.bottom" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613644553" />
-    <state width="1201" height="227" key="GridCell.Tab.2.center" timestamp="1587613644552">
+    <state width="1201" height="227" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.2.center" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1587613644552" />
-    <state width="1201" height="227" key="GridCell.Tab.2.left" timestamp="1587613644551">
+    <state width="1201" height="227" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.2.left" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1587613644551" />
-    <state width="1201" height="227" key="GridCell.Tab.2.right" timestamp="1587613644552">
+    <state width="1201" height="227" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
+    <state width="1201" height="227" key="GridCell.Tab.2.right" timestamp="1587614580926">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1201" height="227" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1587613644552" />
+    <state width="1201" height="227" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1587614580926" />
     <state width="1201" height="227" key="GridCell.Tab.3.bottom" timestamp="1587613586609">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
