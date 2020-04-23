@@ -2,12 +2,13 @@ package com.cqy.service.Impl;
 
 import com.cqy.dao.LoginDAO;
 import com.cqy.dao.NoticeDAO;
+import com.cqy.entity.Notice;
 import com.cqy.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import com.cqy.entity.*;
 
 /**
  * Created by goumin on 2019/10/24.
@@ -23,52 +24,49 @@ public class NoticeServiceImpl implements NoticeService {
     private NoticeDAO noticeDAO;
 
     @Override
-    public List getNotice(String roleId,String departId){
-        return noticeDAO.getNotice(roleId,departId);
+    public List getNotice(String roleId, String departId) {
+        return noticeDAO.getNotice(roleId, departId);
     }
 
     @Override
-    public Integer getAccount(){
+    public Integer getAccount() {
         Notice u = new Notice();
         return loginDAO.find(u).size();
     }
 
     @Override
-    public boolean editNotice(Integer id,String roleId,String content,String departId){
-        if(noticeDAO.editNotice(id,roleId,content,departId)){
+    public boolean editNotice(Integer id, String roleId, String content, String departId) {
+        if (noticeDAO.editNotice(id, roleId, content, departId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     @Override
-    public boolean addNotice(String roleId,String content,String departId){
-        if(noticeDAO. addNotice(roleId,content,departId)){
+    public boolean addNotice(String roleId, String content, String departId) {
+        if (noticeDAO.addNotice(roleId, content, departId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     @Override
-    public boolean  deleteNotice(Integer id){
-        if(noticeDAO.deleteNotice(id)){
-            System.out.println("ASF"+id);
+    public boolean deleteNotice(Integer id) {
+        if (noticeDAO.deleteNotice(id)) {
+            System.out.println("ASF" + id);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     @Override
-    public boolean updateNotice(String userId){
-        if(noticeDAO.updateNotice(userId)){
+    public boolean updateNotice(String userId) {
+        if (noticeDAO.updateNotice(userId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

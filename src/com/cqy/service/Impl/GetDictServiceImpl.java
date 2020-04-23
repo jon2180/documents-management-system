@@ -1,12 +1,16 @@
 package com.cqy.service.Impl;
 
 import com.cqy.dao.LoginDAO;
+import com.cqy.entity.UserDepartment;
+import com.cqy.entity.UserMenu;
+import com.cqy.entity.UserProfession;
+import com.cqy.entity.UserRole;
 import com.cqy.service.GetDictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import com.cqy.entity.*;
 
 /**
  * Created by goumin on 2019/10/24.
@@ -32,7 +36,7 @@ public class GetDictServiceImpl implements GetDictService {
     }
 
     @Override
-    public List getDepartDict(){
+    public List getDepartDict() {
         UserDepartment u = new UserDepartment();
         return loginDAO.find(u);
     }

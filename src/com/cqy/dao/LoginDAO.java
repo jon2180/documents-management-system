@@ -1,7 +1,8 @@
 package com.cqy.dao;
 
-import java.util.List;
 import com.cqy.entity.*;
+
+import java.util.List;
 
 /**
  * Created by goumin on 2019/10/24.
@@ -15,7 +16,7 @@ public interface LoginDAO {
 
     List find(Object o);
 
-    UserInfo checkLogin(String uid,String pwd);
+    UserInfo checkLogin(String uid, String pwd);
 
     UserDepartment getDepartment(String departId);
 
@@ -23,9 +24,9 @@ public interface LoginDAO {
 
     UserProfession getProfession(String professionId);
 
-    Notice getNotice(String roleId,String departId);
+    Notice getNotice(String roleId, String departId);
 
-    Integer getAccount(String roleId,String departId);
+    Integer getAccount(String roleId, String departId);
 
     boolean setLastLoginTime(Integer id);
 }

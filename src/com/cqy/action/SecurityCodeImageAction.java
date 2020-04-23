@@ -1,9 +1,10 @@
 package com.cqy.action;
 
 
+import com.cqy.util.SecurityCode;
+import com.cqy.util.SecurityImage;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
-import com.cqy.util.*;
 
 import java.io.ByteArrayInputStream;
 import java.util.Map;

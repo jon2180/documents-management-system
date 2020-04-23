@@ -8,10 +8,15 @@ import java.util.List;
  */
 
 public interface NoticeService {
-    List getNotice(String roleId,String departId);
+    List getNotice(String roleId, String departId);
+
     Integer getAccount();
-    boolean editNotice(Integer id,String roleId,String content,String departId);
-    boolean addNotice(String roleId,String content,String departId);
-    boolean  deleteNotice(Integer id);
+
+    boolean editNotice(Integer id, String roleId, String content, String departId);
+
+    boolean addNotice(String roleId, String content, String departId);
+
+    boolean deleteNotice(Integer id);
+
     boolean updateNotice(String userId);
 }

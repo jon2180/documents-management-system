@@ -1,12 +1,15 @@
 package com.cqy.dao.Impl;
 
 import com.cqy.dao.MenuDAO;
-import com.cqy.entity.*;
-import org.hibernate.*;
+import com.cqy.entity.UserMenu;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
@@ -24,44 +27,44 @@ public class MenuDAOImpl implements MenuDAO {
     @Override
     public List getMenu(String roleId, int pageNum, int pageSize) {
         try {
-            Session session=sessionFactory.getCurrentSession();
-            Query query=session.createQuery("from UserMenu where roleId = ?");
-            query.setParameter(0,roleId);
+            Session session = sessionFactory.getCurrentSession();
+            Query query = session.createQuery("from UserMenu where roleId = ?");
+            query.setParameter(0, roleId);
             query.setFirstResult((pageNum - 1) * pageSize);//开始索引
             query.setMaxResults(pageSize);//取几条
-            List menuList =query.list();
+            List menuList = query.list();
             return menuList;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
 
     }
+
     @Override
-    public boolean checkParentMenuId(String parentMenuId,String roleId){
+    public boolean checkParentMenuId(String parentMenuId, String roleId) {
         try {
-            Session session=sessionFactory.getCurrentSession();
-            Query query=session.createQuery("from UserMenu where menuId=? and roleId=?");
-            query.setParameter(0,parentMenuId);
-            query.setParameter(1,roleId);
-            List list =query.list();
-            if(list.size()==0){
+            Session session = sessionFactory.getCurrentSession();
+            Query query = session.createQuery("from UserMenu where menuId=? and roleId=?");
+            query.setParameter(0, parentMenuId);
+            query.setParameter(1, roleId);
+            List list = query.list();
+            if (list.size() == 0) {
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
     @Override
-    public boolean editAdminMenuAction(Integer id,String roleId,String roleName,String menuId,String menuName,String menuHref,String menuIcon,String parentMenuId){
+    public boolean editAdminMenuAction(Integer id, String roleId, String roleName, String menuId, String menuName, String menuHref, String menuIcon, String parentMenuId) {
         try {
-            Session session=sessionFactory.getCurrentSession();
-            UserMenu menu =new UserMenu();
+            Session session = sessionFactory.getCurrentSession();
+            UserMenu menu = new UserMenu();
             menu.setId(id);
             menu.setRoleId(roleId);
             menu.setRoleName(roleName);
@@ -72,7 +75,7 @@ public class MenuDAOImpl implements MenuDAO {
             menu.setParentMenuId(parentMenuId);
             session.merge(menu);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -80,10 +83,10 @@ public class MenuDAOImpl implements MenuDAO {
 
 
     @Override
-    public  boolean addAdminMenu(String roleId, String roleName, String menuId,String  menuName,String  menuHref,String  menuIcon,String  parentMenuId){
+    public boolean addAdminMenu(String roleId, String roleName, String menuId, String menuName, String menuHref, String menuIcon, String parentMenuId) {
         try {
-            Session session=sessionFactory.getCurrentSession();
-            UserMenu menu =new UserMenu();
+            Session session = sessionFactory.getCurrentSession();
+            UserMenu menu = new UserMenu();
             menu.setRoleId(roleId);
             menu.setRoleName(roleName);
             menu.setMenuId(menuId);
@@ -93,20 +96,21 @@ public class MenuDAOImpl implements MenuDAO {
             menu.setParentMenuId(parentMenuId);
             session.save(menu);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
+
     @Override
-    public boolean deleteMenuById(Integer id){
+    public boolean deleteMenuById(Integer id) {
         try {
-            Session session=sessionFactory.getCurrentSession();
-            Query query=session.createQuery("delete from UserMenu where id=?");
-            query.setParameter(0,id);
+            Session session = sessionFactory.getCurrentSession();
+            Query query = session.createQuery("delete from UserMenu where id=?");
+            query.setParameter(0, id);
             query.executeUpdate();
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

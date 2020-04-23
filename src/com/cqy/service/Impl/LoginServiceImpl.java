@@ -1,13 +1,11 @@
 package com.cqy.service.Impl;
 
 import com.cqy.dao.LoginDAO;
+import com.cqy.entity.*;
 import com.cqy.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-import com.cqy.entity.*;
-
-import java.util.Date;
 
 /**
  * Created by goumin on 2019/10/24.
@@ -22,8 +20,8 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public UserInfo checkLogin(String userId, String pass) {
-            return loginDAO.checkLogin(userId,pass);
-        }
+        return loginDAO.checkLogin(userId, pass);
+    }
 
 
     @Override
@@ -44,21 +42,20 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public Notice getNotice(String roleId,String departId) {
-        return loginDAO.getNotice(roleId,departId);
+    public Notice getNotice(String roleId, String departId) {
+        return loginDAO.getNotice(roleId, departId);
     }
 
     @Override
-    public Integer getAccount(String roleId,String departId){
-        return  loginDAO.getAccount(roleId,departId);
+    public Integer getAccount(String roleId, String departId) {
+        return loginDAO.getAccount(roleId, departId);
     }
 
     @Override
-    public boolean setLastLoginTime(Integer id){
-        if(loginDAO.setLastLoginTime(id)){
+    public boolean setLastLoginTime(Integer id) {
+        if (loginDAO.setLastLoginTime(id)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

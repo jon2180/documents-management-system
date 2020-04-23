@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
 /**
  * Created by goumin on 2019/10/24.
  */
@@ -29,10 +30,10 @@ public class UpLoadAction extends ActionSupport {
         data = new HashMap<String, Object>();
         data2 = new HashMap<String, Object>();
     }
+
     public Map<String, Object> getDataMap() {
         return dataMap;
     }
-
 
 
     /**
@@ -41,7 +42,7 @@ public class UpLoadAction extends ActionSupport {
     public String upLoadImage() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
         MultiPartRequestWrapper wrapper = (MultiPartRequestWrapper) request;
-        String path= request.getSession().getServletContext().getRealPath("upload");
+        String path = request.getSession().getServletContext().getRealPath("upload");
         UploadedFile file = wrapper.getFiles("file")[0];
         String fileName = wrapper.getFileNames("file")[0];
         String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
@@ -55,11 +56,11 @@ public class UpLoadAction extends ActionSupport {
         while ((length = in.read(buffer)) > 0) {
             out.write(buffer, 0, length);
         }
-        String truePath=request.getContextPath() + "/" + "upload" + "/" + newFileName;
-        System.out.println("现在是上传文件名为"+newFileName+"到"+path);
+        String truePath = request.getContextPath() + "/" + "upload" + "/" + newFileName;
+        System.out.println("现在是上传文件名为" + newFileName + "到" + path);
         in.close();
         out.close();
-        data2.put("filePath",truePath);
+        data2.put("filePath", truePath);
         data.put("data", data2);
         dataMap.put("results", data);
         dataMap.put("errorNo", "0");

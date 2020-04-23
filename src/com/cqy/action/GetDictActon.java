@@ -1,22 +1,21 @@
 package com.cqy.action;
-import com.cqy.service.*;
+
+import com.cqy.service.GetDictService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by goumin on 2019/10/24.
- */
-/**
  * 菜单类  数据传输容器map和 list
  */
 @Controller
 @Scope("prototype")
-public class GetDictActon  extends ActionSupport{
+public class GetDictActon extends ActionSupport {
     private Map<String, Object> data;
     private Map<String, Object> dataMap;
     private String roleId;
@@ -25,8 +24,13 @@ public class GetDictActon  extends ActionSupport{
     private GetDictService getDictService;
 
 
+    public GetDictActon() {
+        data = new HashMap<String, Object>();
+        dataMap = new HashMap<String, Object>();
+    }
+
     public String getAdminMenu() {
-        roleId="1";
+        roleId = "1";
         List menuList = getDictService.getMenu(roleId);
         data.put("data", menuList);
         dataMap.put("results", data);
@@ -36,7 +40,7 @@ public class GetDictActon  extends ActionSupport{
     }
 
     public String getCollegeAdminMenu() {
-        roleId="2";
+        roleId = "2";
         List menuList = getDictService.getMenu(roleId);
         data.put("data", menuList);
         dataMap.put("results", data);
@@ -46,7 +50,7 @@ public class GetDictActon  extends ActionSupport{
     }
 
     public String getTeacherMenu() {
-        roleId="3";
+        roleId = "3";
         List menuList = getDictService.getMenu(roleId);
         data.put("data", menuList);
         dataMap.put("results", data);
@@ -56,7 +60,7 @@ public class GetDictActon  extends ActionSupport{
     }
 
     public String getRoleDict() {
-        List roleDictList=getDictService.getRoleDict();
+        List roleDictList = getDictService.getRoleDict();
         data.put("data", roleDictList);
         dataMap.put("results", data);
         dataMap.put("errorNo", "0");
@@ -65,7 +69,7 @@ public class GetDictActon  extends ActionSupport{
     }
 
     public String getDepartDict() {
-        List roleList=getDictService.getDepartDict();
+        List roleList = getDictService.getDepartDict();
         data.put("data", roleList);
         dataMap.put("results", data);
         dataMap.put("errorNo", "0");
@@ -73,9 +77,8 @@ public class GetDictActon  extends ActionSupport{
         return SUCCESS;
     }
 
-
     public String getProfessionDict() {
-        List roleList=getDictService.getProfessionDict();
+        List roleList = getDictService.getProfessionDict();
         data.put("data", roleList);
         dataMap.put("results", data);
         dataMap.put("errorNo", "0");
@@ -83,11 +86,6 @@ public class GetDictActon  extends ActionSupport{
         return SUCCESS;
     }
 
-
-    public GetDictActon() {
-        data = new HashMap<String, Object>();
-        dataMap = new HashMap<String, Object>();
-    }
     public Map<String, Object> getDataMap() {
         return dataMap;
     }

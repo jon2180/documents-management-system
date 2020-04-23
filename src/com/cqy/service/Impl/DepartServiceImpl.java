@@ -1,13 +1,14 @@
 package com.cqy.service.Impl;
 
-import com.cqy.dao.LoginDAO;
 import com.cqy.dao.DepartDAO;
+import com.cqy.dao.LoginDAO;
+import com.cqy.entity.UserDepartment;
 import com.cqy.service.DepartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import com.cqy.entity.*;
 
 /**
  * Created by goumin on 2019/10/24.
@@ -30,54 +31,53 @@ public class DepartServiceImpl implements DepartService {
     }
 
     @Override
-    public Integer queryAccount(){
-            UserDepartment u = new UserDepartment();
-            return loginDAO.find(u).size();
+    public Integer queryAccount() {
+        UserDepartment u = new UserDepartment();
+        return loginDAO.find(u).size();
     }
 
     @Override
-    public boolean checkDepartId(String departmentId){
-        if(departDAO.checkDepartId(departmentId)){
+    public boolean checkDepartId(String departmentId) {
+        if (departDAO.checkDepartId(departmentId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     @Override
-    public boolean addDepart(String departmentId,String departmentName){
-        if(departDAO.addDepart(departmentId,departmentName)){
+    public boolean addDepart(String departmentId, String departmentName) {
+        if (departDAO.addDepart(departmentId, departmentName)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
 
     }
+
     @Override
-    public boolean editDepart(String departmentId,String departmentName){
-        if(departDAO.editDepart(departmentId,departmentName)){
+    public boolean editDepart(String departmentId, String departmentName) {
+        if (departDAO.editDepart(departmentId, departmentName)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     @Override
-    public boolean checkDepart(String departmentId){
-        if(departDAO.checkDepart(departmentId)){
+    public boolean checkDepart(String departmentId) {
+        if (departDAO.checkDepart(departmentId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     @Override
-    public boolean deleteDepart(String departmentId){
-        if(departDAO.deleteDepart(departmentId)){
+    public boolean deleteDepart(String departmentId) {
+        if (departDAO.deleteDepart(departmentId)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

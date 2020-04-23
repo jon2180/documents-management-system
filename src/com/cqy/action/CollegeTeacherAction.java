@@ -10,6 +10,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.json.annotations.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
@@ -21,16 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 学院教师
  * Created by goumin on 2019/10/24.
  */
 
-/*学院教师*/
-
 public class CollegeTeacherAction extends ActionSupport {
-    private Map<String, Object> dataMap;
-    private Map<String, Object> data;
-    private Map<String, Object> data2;
-
     String name;
     int pageNum;
     int pageSize;
@@ -46,19 +42,19 @@ public class CollegeTeacherAction extends ActionSupport {
     int state;
     String political;
     String professionId;
-    String  description;
-    String  userDepartId;
-    String  filePath;
-    String  departmentName;
+    String description;
+    String userDepartId;
+    String filePath;
+    String departmentName;
     String qualification;
-    String  subject;
+    String subject;
     String nation;
     String email;
-
-
-
+    private Map<String, Object> dataMap;
+    private Map<String, Object> data;
+    private Map<String, Object> data2;
     /**
-     *查询所在院系教师的方法queryCollegeTeacher
+     * 查询所在院系教师的方法queryCollegeTeacher
      */
 
     @Autowired
@@ -66,95 +62,94 @@ public class CollegeTeacherAction extends ActionSupport {
     @Autowired
     private TeacherService teacherService;
 
+    public CollegeTeacherAction() {
+        //初始化Map对象
+        dataMap = new HashMap<String, Object>();
+        data = new HashMap<String, Object>();
+        data2 = new HashMap<String, Object>();
+    }
+
     public String queryCollegeTeacher() {
-        if((name==null&&userId==null)||(userId.equals("")&&name.equals(""))) {
+        if ((name == null && userId == null) || (userId.equals("") && name.equals(""))) {
             int total = collegeTeacherService.getTotalCollegeAccount(departId);
-            List list = collegeTeacherService.getAllCollegeTeacher(departId,pageNum,pageSize);
+            List list = collegeTeacherService.getAllCollegeTeacher(departId, pageNum, pageSize);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是查询管理员所在院系的教师，总数为"+total);
-        }
-        else if(userId.equals("")){
-            List list = collegeTeacherService.getCollegeTeacherByName(name,departId,pageNum,pageSize);
-            int total = collegeTeacherService.getCollegeAccountByName(name,departId);
+            System.out.println("现在是查询管理员所在院系的教师，总数为" + total);
+        } else if (userId.equals("")) {
+            List list = collegeTeacherService.getCollegeTeacherByName(name, departId, pageNum, pageSize);
+            int total = collegeTeacherService.getCollegeAccountByName(name, departId);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是根据管理员所在院系的教师名字"+name+"查询，总数为"+total);
-        }
-        else if(name.equals("")){
-            int total = collegeTeacherService.getCollegeAccountById(userId,departId);
-            List list = collegeTeacherService.getCollegeTeacherById(userId,departId,pageNum,pageSize);
+            System.out.println("现在是根据管理员所在院系的教师名字" + name + "查询，总数为" + total);
+        } else if (name.equals("")) {
+            int total = collegeTeacherService.getCollegeAccountById(userId, departId);
+            List list = collegeTeacherService.getCollegeTeacherById(userId, departId, pageNum, pageSize);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是根据管理员所在院系的教师工号"+userId+"查询，总数为"+total);
-        }
-        else{
-            int total = collegeTeacherService.getCollegeAccountByIdAndName(userId,name,departId);
-            List list = collegeTeacherService.getCollegeTeacherByIdAndName(userId,name,departId,pageNum,pageSize);
+            System.out.println("现在是根据管理员所在院系的教师工号" + userId + "查询，总数为" + total);
+        } else {
+            int total = collegeTeacherService.getCollegeAccountByIdAndName(userId, name, departId);
+            List list = collegeTeacherService.getCollegeTeacherByIdAndName(userId, name, departId, pageNum, pageSize);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是根据管理员所在院系的教师工号"+userId+"和姓名"+name+"精准查询，总数为"+total);
+            System.out.println("现在是根据管理员所在院系的教师工号" + userId + "和姓名" + name + "精准查询，总数为" + total);
         }
         return SUCCESS;
     }
 
     /**
-     *保存所在学院老师的方法saveCollegeTeacher
+     * 保存所在学院老师的方法saveCollegeTeacher
      */
     public String saveCollegeTeacher() throws Exception {
-        IdCardUtil idCardInfo=new IdCardUtil(idCard);
+        IdCardUtil idCardInfo = new IdCardUtil(idCard);
         if ((!roleId.equals("3"))) {
             dataMap.put("errorInfo", "院系管理员只能添加普通教师！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
 
-        }else if ((roleId.equals("3"))&&departId.equals("1")) {
+        } else if ((roleId.equals("3")) && departId.equals("1")) {
             dataMap.put("errorInfo", "该角色不能在系统管理部门！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if(!userDepartId.equals(departId)){
+        } else if (!userDepartId.equals(departId)) {
             System.out.println("只能添加本学院的教师！");
             data.put("data", "");
-            dataMap.put("errorInfo", "只能添加管理员所在学院"+"（"+departmentName+"）"+"的教师！");
+            dataMap.put("errorInfo", "只能添加管理员所在学院" + "（" + departmentName + "）" + "的教师！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if(!userId.matches("[0-9]+")||userId.length()<10){
+        } else if (!userId.matches("[0-9]+") || userId.length() < 10) {
             System.out.println("新增失败！工号为十位纯数字");
             dataMap.put("errorInfo", "工号为十位纯数字");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if (!teacherService.checkUser_id(userId)) {
+        } else if (!teacherService.checkUser_id(userId)) {
             System.out.println("工号不能重复");
             data.put("data", "");
             dataMap.put("errorInfo", "工号不能重复");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if(idCardInfo.getProvince()==null) {
+        } else if (idCardInfo.getProvince() == null) {
             System.out.println("请输入有效的身份证信息！");
             dataMap.put("errorInfo", "请输入有效的身份证信息！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else {
-            String cityName= idCardInfo.getCityNames(idCard);
-            String origin=idCardInfo.getProvince()+cityName;
-            if (teacherService.saveTeacher(userId, name, roleId, departId, idCardInfo.getBirthday(), phone, idCardInfo.getGender(), idCard, address, state, political, professionId, description,filePath,qualification,subject,idCardInfo.getAge(),origin,nation,email)) {
+        } else {
+            String cityName = idCardInfo.getCityNames(idCard);
+            String origin = idCardInfo.getProvince() + cityName;
+            if (teacherService.saveTeacher(userId, name, roleId, departId, idCardInfo.getBirthday(), phone, idCardInfo.getGender(), idCard, address, state, political, professionId, description, filePath, qualification, subject, idCardInfo.getAge(), origin, nation, email)) {
                 System.out.println("现在是院系管理员新增工号为" + userId + "的教师");
                 data.put("data", "1");
                 dataMap.put("results", data);
@@ -164,27 +159,26 @@ public class CollegeTeacherAction extends ActionSupport {
         return SUCCESS;
     }
 
-
     /**
-     *生成EXCEL，导出本学院所有教师的信息表exportCollegeTeacher
+     * 生成EXCEL，导出本学院所有教师的信息表exportCollegeTeacher
      **/
 
     public String exportCollegeTeacher() {
         try {
             HttpServletRequest request = ServletActionContext.getRequest();
             String departId = request.getParameter("departId");
-            String departmentName=request.getParameter("departmentName");
+            String departmentName = request.getParameter("departmentName");
             HttpServletResponse response = ServletActionContext.getResponse();
             OutputStream out = response.getOutputStream();
-            String fileName =departmentName+"教师信息表.xls";
+            String fileName = departmentName + "教师信息表.xls";
             response.setContentType("application/x-msdownload");
             response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, "UTF-8"));
-            List list = collegeTeacherService.getAllCollegeTeacher(departId,0,10000);
+            List list = collegeTeacherService.getAllCollegeTeacher(departId, 0, 10000);
             ExportExcelUtils eeu = new ExportExcelUtils();
             HSSFWorkbook workbook = new HSSFWorkbook();
             List<List<String>> data = new ArrayList<List<String>>();
             for (int j = 0; j < list.size(); j++) {
-                UserInfo u= (UserInfo)list.get(j);
+                UserInfo u = (UserInfo) list.get(j);
                 List rowData = new ArrayList();
                 rowData.add(u.getUserId());
                 rowData.add(u.getName());
@@ -201,8 +195,8 @@ public class CollegeTeacherAction extends ActionSupport {
                 rowData.add(u.getLastLoginTime());
                 data.add(rowData);
             }
-            String[] headers = { "工号", "姓名","性别", "年龄","民族" , "联系方式","电子邮件","出生日期", "身份证号" , "专业","籍贯", "住址","最后登录时间" };
-            eeu.exportExcel(workbook,0,departmentName+"教师信息表.xls" , headers, data, out);
+            String[] headers = {"工号", "姓名", "性别", "年龄", "民族", "联系方式", "电子邮件", "出生日期", "身份证号", "专业", "籍贯", "住址", "最后登录时间"};
+            eeu.exportExcel(workbook, 0, departmentName + "教师信息表.xls", headers, data, out);
             workbook.write(out);
             out.close();
         } catch (Exception e) {
@@ -266,6 +260,7 @@ public class CollegeTeacherAction extends ActionSupport {
     public void setDepartId(String departId) {
         this.departId = departId;
     }
+
     @JSON(format = "yyyy-MM-dd")
     public Date getBorn() {
         return born;
@@ -395,12 +390,6 @@ public class CollegeTeacherAction extends ActionSupport {
         this.email = email;
     }
 
-    public CollegeTeacherAction(){
-        //初始化Map对象
-        dataMap = new HashMap<String, Object>();
-        data = new HashMap<String, Object>();
-        data2= new HashMap<String, Object>();
-    }
     public Map<String, Object> getDataMap() {
         return dataMap;
     }

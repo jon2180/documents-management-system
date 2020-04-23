@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tdms:Web exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66e1f5c9-f797-4576-99bb-b318460d03d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/tdms_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/tomcat_lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/forbid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SSH.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/CollegeTeacherAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/CollegeTeacherAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/DepartAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/DepartAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/GetDictActon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/GetDictActon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/LoginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/LoginAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/MenuAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/MenuAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/NoticeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/NoticeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/RoleAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/RoleAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/SalaryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/SalaryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/SecurityCodeImageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/SecurityCodeImageAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/TeacherAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/TeacherAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/action/UserInfoModifyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/action/UserInfoModifyAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/CollegeTeacherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/CollegeTeacherDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/DepartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/DepartDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/CollegeTeacherDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/CollegeTeacherDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/DepartDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/DepartDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/LoginDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/MenuDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/MenuDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/NoticeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/NoticeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/RoleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/RoleDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/SalaryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/SalaryDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/Impl/UserInfoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/Impl/UserInfoDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/MenuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/NoticeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/NoticeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/RoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/RoleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/SalaryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/SalaryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/dao/UserInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/dao/UserInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/entity/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/CollegeTeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/CollegeTeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/DepartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/DepartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/GetDictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/GetDictService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/CollegeTeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/CollegeTeacherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/DepartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/DepartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/GetDictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/GetDictServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/NoticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/NoticeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/SalaryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/SalaryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/TeacherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/Impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/Impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/SalaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/SalaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/service/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/AddSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/AddSalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/AddSalaryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/AddSalaryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/ExportExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/ExportExcelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/IdCardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/IdCardUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/IdCardValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/IdCardValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/Md5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/Md5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/SecurityCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/SecurityCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/SecurityImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/SecurityImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/UpdatePwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/UpdatePwd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/UpdatePwdAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/UpdatePwdAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/UpdateUID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/UpdateUID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cqy/util/UpdateUIDAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cqy/util/UpdateUIDAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacher-doc-manage-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/teacher-doc-manage-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/loginCheckColAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/loginCheckColAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/loginCheckSysAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/loginCheckSysAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/loginCheckTeacher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/loginCheckTeacher.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1avJA4kYyIVcee3wJ3epkx5VMVy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/websocket-api.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.20574713" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="tdms:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_teacher-doc-manage-system_3" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50826" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="tdms:Web exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66e1f5c9-f797-4576-99bb-b318460d03d4" name="Default Changelist" comment="" />
+      <created>1587609987660</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587609987660</updated>
+      <workItem from="1587609992343" duration="3575000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="668" y="309" width="500" height="216" key="#Assign_Data_Sources" timestamp="1587613214994">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="668" y="309" width="500" height="216" key="#Assign_Data_Sources/0.0.1536.834@0.0.1536.834" timestamp="1587613214994" />
+    <state x="249" y="0" key="#Project_Structure" timestamp="1587612599660">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1587612599660" />
+    <state x="548" y="306" key="#TomEE_Server" timestamp="1587610335105">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="548" y="306" key="#TomEE_Server/0.0.1536.834@0.0.1536.834" timestamp="1587610335105" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587613102298">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1587613102298" />
+    <state x="292" y="56" width="919" height="737" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1587610353606">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="292" y="56" width="919" height="737" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.834@0.0.1536.834" timestamp="1587610353606" />
+    <state x="499" y="172" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1587610619199">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="172" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1536.834@0.0.1536.834" timestamp="1587610619199" />
+    <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1587612746076">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1587612746076" />
+    <state x="473" y="159" key="FileChooserDialogImpl" timestamp="1587610492849">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="473" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1587610492849" />
+    <state width="1201" height="227" key="GridCell.Tab.0.bottom" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.0.center" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.0.left" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.0.right" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.1.bottom" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.1.center" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.1.left" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.1.right" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.2.bottom" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.2.center" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.2.left" timestamp="1587613463386">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1587613463386" />
+    <state width="1201" height="227" key="GridCell.Tab.2.right" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.3.bottom" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.3.center" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.3.left" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state width="1201" height="227" key="GridCell.Tab.3.right" timestamp="1587613463387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1201" height="227" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1587613463387" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1587612622110">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1587612622110" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1587611699301">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1587611699301" />
+    <state x="449" y="100" key="spring file set editor" timestamp="1587610085470">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="100" key="spring file set editor/0.0.1536.834@0.0.1536.834" timestamp="1587610085470" />
+    <state x="490" y="148" key="struts2 file set editor" timestamp="1587610800483">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="490" y="148" key="struts2 file set editor/0.0.1536.834@0.0.1536.834" timestamp="1587610800483" />
+  </component>
+</project>

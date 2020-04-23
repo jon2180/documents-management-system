@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="tdms:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/tdms_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="teacher-doc-manage-system/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="teacher-doc-manage-system" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="tomcat-lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

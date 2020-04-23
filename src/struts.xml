@@ -6,7 +6,7 @@
 <struts>
     <constant name="struts.devMode" value="false"/>
     <constant name="struts.objectFactory" value="spring"/>
-                                        <!--默认的的Action-->
+    <!--默认的的Action-->
     <package name="default" namespace="/" extends="struts-default">
         <!--登录系统-->
         <action name="loginAction" class="com.cqy.action.LoginAction" method="Login">
@@ -21,12 +21,13 @@
         <action name="loginOutAction" class="com.cqy.action.LoginAction" method="LoginOut">
             <result name="success">/login.jsp</result>
         </action>
-                                            <!--导出表格类 Start-->
+        <!--导出表格类 Start-->
         <!--系统管理员导出全校所有教师信息-->
         <action name="exportTeacherExcel" class="com.cqy.action.TeacherAction" method="exportTeacher">
         </action>
         <!--院系管理员导出本院所有教师信息-->
-        <action name="exportCollegeTeacherExcel" class="com.cqy.action.CollegeTeacherAction" method="exportCollegeTeacher">
+        <action name="exportCollegeTeacherExcel" class="com.cqy.action.CollegeTeacherAction"
+                method="exportCollegeTeacher">
         </action>
         <!--院系管理员导出本院教师的工资记录-->
         <action name="exportSalaryExcel" class="com.cqy.action.SalaryAction" method="exportSalary">
@@ -34,7 +35,7 @@
         <!--普通教师导出自己的所有工资记录-->
         <action name="exportTeacherSalaryExcel" class="com.cqy.action.SalaryAction" method="exportTeacherSalary">
         </action>
-                                            <!--导出表格类 End-->
+        <!--导出表格类 End-->
         <!--
         工具类：修改数据库数据
         <action name="update" class="com.cqy.util.AddSalaryAction" method="update">
@@ -51,9 +52,9 @@
     </package>
 
 
-                                            <!--返回json的Action-->
-    <package name="json"  extends="json-default" namespace="/">
-                                        <!--人员管理-->
+    <!--返回json的Action-->
+    <package name="json" extends="json-default" namespace="/">
+        <!--人员管理-->
         <!-- 获取人员列表-->
         <action name="queryMemberAction" class="com.cqy.action.TeacherAction" method="queryMember">
             <result type="json">
@@ -86,7 +87,7 @@
             </result>
             <result name="input">/404.html</result>
         </action>
-                                           <!-- 获取菜单-->
+        <!-- 获取菜单-->
         <!-- 获取管理员菜单-->
         <action name="getAdminMenu" class="com.cqy.action.GetDictActon" method="getAdminMenu">
             <result type="json">
@@ -105,7 +106,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                            <!-- 获取字典-->
+        <!-- 获取字典-->
         <!-- 获取角色字典-->
         <action name="getRoleDict" class="com.cqy.action.GetDictActon" method="getRoleDict">
             <result type="json">
@@ -124,7 +125,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                            <!-- 菜单管理-->
+        <!-- 菜单管理-->
         <!-- 增加菜单-->
         <action name="addAdminMenuAction" class="com.cqy.action.MenuAction" method="addAdminMenu">
             <result type="json">
@@ -143,7 +144,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                        <!-- 菜单获取-->
+        <!-- 菜单获取-->
         <!-- 获取系统管理员菜单-->
         <action name="queryAdminMenu" class="com.cqy.action.MenuAction" method="queryAdminMenu">
             <result type="json">
@@ -163,7 +164,7 @@
             </result>
         </action>
 
-                                            <!-- 学院管理-->
+        <!-- 学院管理-->
         <!-- 获取学院列表-->
         <action name="queryDepartDict" class="com.cqy.action.DepartAction" method="queryDepart">
             <result type="json">
@@ -189,7 +190,7 @@
             </result>
         </action>
 
-                                            <!-- 角色管理-->
+        <!-- 角色管理-->
         <!-- 获取角色列表-->
         <action name="queryRoleDict" class="com.cqy.action.RoleAction" method="queryRole">
             <result type="json">
@@ -214,7 +215,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                            <!-- 公告管理-->
+        <!-- 公告管理-->
         <!--获取公告-->
         <action name="queryNoticeAction" class="com.cqy.action.NoticeAction" method="queryNotice">
             <result type="json">
@@ -245,7 +246,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                                <!-- 信息修改管理-->
+        <!-- 信息修改管理-->
         <!--个人资料修改-->
         <action name="userInfoModifyAction" class="com.cqy.action.UserInfoModifyAction" method="userInfoModify">
             <result type="json">
@@ -258,9 +259,10 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                                <!-- 院系管理员功能-->
+        <!-- 院系管理员功能-->
         <!-- 获取所在院系教师-->
-        <action name="queryCollegeTeacherAction" class="com.cqy.action.CollegeTeacherAction" method="queryCollegeTeacher">
+        <action name="queryCollegeTeacherAction" class="com.cqy.action.CollegeTeacherAction"
+                method="queryCollegeTeacher">
             <result type="json">
                 <param name="root">dataMap</param>
             </result>
@@ -277,7 +279,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-                                            <!-- 工资管理-->
+        <!-- 工资管理-->
         <!--院系管理员查询本院教师工资记录-->
         <action name="querySalaryAction" class="com.cqy.action.SalaryAction" method="querySalary">
             <result type="json">

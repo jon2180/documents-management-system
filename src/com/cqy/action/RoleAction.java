@@ -1,122 +1,114 @@
 package com.cqy.action;
-import com.cqy.service.*;
+
+import com.cqy.service.RoleService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * Created by goumin on 2019/10/24.
- */
 /**
  * 权限管理类  数据传输容器map和 list
- *              权限的管理（编辑、添加和删除）
+ * 权限的管理（编辑、添加和删除）
+ * Created by goumin on 2019/10/24.
  */
 @Controller
 @Scope("prototype")
 public class RoleAction extends ActionSupport {
-    private Map<String, Object> data;
-    private Map<String, Object> dataMap;
-    private Map<String, Object> roleData;
     String roleId;
     String rolename;
     String description;
     String id;
-
     /**
-     *查询角色方法queryRoleDict
+     * 查询角色方法queryRoleDict
      */
     @Autowired
     RoleService roleService;
+    private Map<String, Object> data;
+    private Map<String, Object> dataMap;
+    private Map<String, Object> roleData;
+
+    public RoleAction() {
+        data = new HashMap<String, Object>();
+        dataMap = new HashMap<String, Object>();
+        roleData = new HashMap<String, Object>();
+    }
+
     public String queryRole() {
-        List roleList=roleService.getRole();
+        List roleList = roleService.getRole();
         int total = roleService.queryAccount();
         roleData.put("list", roleList);
         roleData.put("total", total);
         data.put("data", roleData);
         dataMap.put("results", data);
         dataMap.put("errorNo", "0");
-        System.out.println("现在是查询角色字典，总数为"+total);
+        System.out.println("现在是查询角色字典，总数为" + total);
         return SUCCESS;
     }
+
     /**
-     *编辑角色的方法editRole
+     * 编辑角色的方法editRole
      */
     public String editRole() {
-        if((roleService.editRole(roleId,rolename,description))) {
-            System.out.println("现在是编辑ID为"+roleId+"的角色");
+        if ((roleService.editRole(roleId, rolename, description))) {
+            System.out.println("现在是编辑ID为" + roleId + "的角色");
             data.put("data", "1");
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-        }
-        else{
+        } else {
             dataMap.put("errorInfo", "编辑失败！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
+
     /**
-     *新增角色的方法addRole
+     * 新增角色的方法addRole
      */
     public String addRole() {
 
-        if(!roleService.checkRoleId(roleId)){
+        if (!roleService.checkRoleId(roleId)) {
             System.out.println("角色ID不能重复");
             dataMap.put("errorInfo", "角色ID不能重复！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if((roleService.addRole(roleId,rolename,description))) {
-            System.out.println("现在是新增ID为"+roleId+"的角色");
+        } else if ((roleService.addRole(roleId, rolename, description))) {
+            System.out.println("现在是新增ID为" + roleId + "的角色");
             data.put("data", "1");
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-        }
-        else{
+        } else {
             dataMap.put("errorInfo", "新增失败！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
+
     /**
-     *删除角色的方法addRole
+     * 删除角色的方法addRole
      */
     public String deleteRole() {
-        if(roleId.contains("1")||roleId.contains("2")||roleId.contains("3")){
+        if (roleId.contains("1") || roleId.contains("2") || roleId.contains("3")) {
             dataMap.put("errorInfo", "删除失败！此角色为内置重要角色，只可更改名称，不可删除！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if((roleService.deleteRole(roleId))) {
-            System.out.println("现在是删除ID为"+roleId+"的角色");
+        } else if ((roleService.deleteRole(roleId))) {
+            System.out.println("现在是删除ID为" + roleId + "的角色");
             data.put("data", "1");
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-        }
-        else{
+        } else {
             dataMap.put("errorInfo", "删除失败！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
-
-
-
-
-
-
-
-
-
-
-
 
     public String getId() {
         return id;
@@ -134,7 +126,6 @@ public class RoleAction extends ActionSupport {
         this.roleId = roleId;
     }
 
-
     public String getRolename() {
         return rolename;
     }
@@ -150,11 +141,7 @@ public class RoleAction extends ActionSupport {
     public void setDescription(String description) {
         this.description = description;
     }
-    public RoleAction() {
-        data = new HashMap<String, Object>();
-        dataMap = new HashMap<String, Object>();
-        roleData = new HashMap<String, Object>();
-    }
+
     public Map<String, Object> getDataMap() {
         return dataMap;
     }

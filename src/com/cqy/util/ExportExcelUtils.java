@@ -3,31 +3,26 @@ package com.cqy.util;
 /**
  * Created by goumin on 2019/11/15.
  */
+
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
+
 import java.io.OutputStream;
 import java.util.List;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
 
 public class ExportExcelUtils {
 
     /**
+     * @param workbook
+     * @param sheetNum   (sheet的位置，0表示第一个表格中的第一个sheet)
+     * @param sheetTitle （sheet的名称）
+     * @param headers    （表格的标题）
+     * @param result     （表格的数据）
+     * @param out        （输出流）
+     * @throws Exception
      * @Title: exportExcel
      * @Description: 导出Excel的方法
      * @author: evan @
-     * @param workbook
-     * @param sheetNum (sheet的位置，0表示第一个表格中的第一个sheet)
-     * @param sheetTitle  （sheet的名称）
-     * @param headers    （表格的标题）
-     * @param result   （表格的数据）
-     * @param out  （输出流）
-     * @throws Exception
      */
     public void exportExcel(HSSFWorkbook workbook, int sheetNum,
                             String sheetTitle, String[] headers, List<List<String>> result,

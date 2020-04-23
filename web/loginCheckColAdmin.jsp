@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,11 +5,11 @@
 </head>
 <body>
 <%
-    if(session.getAttribute("login") == null||session.getAttribute("role") !="colAdmin") {
+    if (session.getAttribute("login") == null || session.getAttribute("role") != "colAdmin") {
 %>
-<script type="text/javascript" language="javascript">
-    alert("您无权查看本页面或者登录对话已失效，点击跳转到登录页面！");
-    top.location.href="/login.jsp";
+<script>
+  alert("您无权查看本页面或者登录对话已失效，点击跳转到登录页面！");
+  top.location.href = "/login.jsp";
 </script>
 <%
     }

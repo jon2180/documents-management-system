@@ -1,6 +1,5 @@
 package com.cqy.action;
 
-import com.cqy.entity.TeacherSalary;
 import com.cqy.entity.UserDepartment;
 import com.cqy.entity.UserInfo;
 import com.cqy.service.DepartService;
@@ -8,7 +7,7 @@ import com.cqy.service.TeacherService;
 import com.cqy.util.ExportExcelUtils;
 import com.cqy.util.IdCardUtil;
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.json.annotations.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +16,8 @@ import org.springframework.stereotype.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -30,23 +26,8 @@ import java.util.*;
  */
 @Controller
 @Scope("prototype")
-public class TeacherAction extends ActionSupport{
+public class TeacherAction extends ActionSupport {
 
-    private Map<String, Object> dataMap;
-    private Map<String, Object> data;
-    private Map<String, Object> data2;
-    /**
-     * 构造方法
-     */
-    public TeacherAction(){
-        //初始化Map对象
-        dataMap = new HashMap<String, Object>();
-        data = new HashMap<String, Object>();
-        data2= new HashMap<String, Object>();
-    }
-    public Map<String, Object> getDataMap() {
-        return dataMap;
-    }
     Integer id;
     String name;
     int pageNum;
@@ -63,182 +44,184 @@ public class TeacherAction extends ActionSupport{
     int state;
     String political;
     String professionId;
-    String  description;
-    String  userDepartId;
-    String  filePath;
+    String description;
+    String userDepartId;
+    String filePath;
     String qualification;
-    String  subject;
+    String subject;
     String nation;
     String email;
     String ownUserId;
-
+    private Map<String, Object> dataMap;
+    private Map<String, Object> data;
+    private Map<String, Object> data2;
     @Autowired
     private TeacherService teacherService;
     @Autowired
     private DepartService departService;
-    public String queryMember() {
-        if((name==null&&userId==null&&departId==null)||(userId.equals("")&&name.equals("")&&departId.equals(""))) {
-            int total = teacherService.getAccount(roleId);
-            List list = teacherService.getMember(roleId,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是查询人员，总数为"+total);
-        }
-        else if(userId.equals("")&&name.equals("")){
-            int total = teacherService.getAccountByDepart_id(roleId,departId);
-            List list = teacherService.getTeacherByDepart_id(roleId,departId,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是根据学院ID"+departId+"查询教师，总数为"+total);
-        }
-        else if(userId.equals("")&&departId.equals("")){
-            int total = teacherService.getAccountByName(roleId,name);
-            List list = teacherService.getTeacherByName(roleId,name,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是根据名字"+name+"查询教师，总数为"+total);
-        }
-        else if(name.equals("")&&departId.equals("")){
-            int total = teacherService.getAccountById(roleId,userId);
-            List list = teacherService.getTeacherById(roleId,userId,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是根据工号"+userId+"查询教师，总数为"+total);
-        }
-        else if(name.equals("")){
-            int total = teacherService.getAccountByDepart_idAndId(roleId,departId,userId);
-            List list = teacherService.getTeacherByDepart_idAndId(roleId,departId,userId,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是根据学院ID："+departId+"和工号："+userId+"组合查询教师，总数为"+total);
-        }
-        else if(userId.equals("")){
-            int total = teacherService.getAccountByDepart_idAndName(roleId,departId,name);
-            List list = teacherService.getTeacherDepart_idAndName(roleId,departId,name,pageNum,pageSize);
-            data2.put("list", list);
-            data2.put("total", total);
-            data.put("data", data2);
-            dataMap.put("results", data);
-            dataMap.put("errorNo", "0");
-            System.out.println("现在是根据学院ID："+departId+"和姓名："+name+"组合查询教师，总数为"+total);
-        }
-        else if(departId.equals("")){
 
-            int total = teacherService.getAccountByIdAndName(roleId,userId,name);
-            List list = teacherService.getTeacherByIdAndName(roleId,userId,name,pageNum,pageSize);
+    /**
+     * 构造方法
+     */
+    public TeacherAction() {
+        //初始化Map对象
+        dataMap = new HashMap<String, Object>();
+        data = new HashMap<String, Object>();
+        data2 = new HashMap<String, Object>();
+    }
+
+    public Map<String, Object> getDataMap() {
+        return dataMap;
+    }
+
+    public String queryMember() {
+        if ((name == null && userId == null && departId == null) || (userId.equals("") && name.equals("") && departId.equals(""))) {
+            int total = teacherService.getAccount(roleId);
+            List list = teacherService.getMember(roleId, pageNum, pageSize);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是根据学院ID："+departId+"和姓名："+name+"组合查询教师，总数为"+total);
-        }
-        else{
-            int total = teacherService.getAccountByDepart_idAndIdAndName(roleId,userId,name,departId);
-            List list = teacherService.getTeacherByDepart_idAndIdAndName(roleId,userId,name,departId,pageNum,pageSize);
+            System.out.println("现在是查询人员，总数为" + total);
+        } else if (userId.equals("") && name.equals("")) {
+            int total = teacherService.getAccountByDepart_id(roleId, departId);
+            List list = teacherService.getTeacherByDepart_id(roleId, departId, pageNum, pageSize);
             data2.put("list", list);
             data2.put("total", total);
             data.put("data", data2);
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是根据工号"+userId+"和姓名"+name+"和部门ID"+departId+"精准查询教师，总数为"+total);
+            System.out.println("现在是根据学院ID" + departId + "查询教师，总数为" + total);
+        } else if (userId.equals("") && departId.equals("")) {
+            int total = teacherService.getAccountByName(roleId, name);
+            List list = teacherService.getTeacherByName(roleId, name, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据名字" + name + "查询教师，总数为" + total);
+        } else if (name.equals("") && departId.equals("")) {
+            int total = teacherService.getAccountById(roleId, userId);
+            List list = teacherService.getTeacherById(roleId, userId, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据工号" + userId + "查询教师，总数为" + total);
+        } else if (name.equals("")) {
+            int total = teacherService.getAccountByDepart_idAndId(roleId, departId, userId);
+            List list = teacherService.getTeacherByDepart_idAndId(roleId, departId, userId, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据学院ID：" + departId + "和工号：" + userId + "组合查询教师，总数为" + total);
+        } else if (userId.equals("")) {
+            int total = teacherService.getAccountByDepart_idAndName(roleId, departId, name);
+            List list = teacherService.getTeacherDepart_idAndName(roleId, departId, name, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据学院ID：" + departId + "和姓名：" + name + "组合查询教师，总数为" + total);
+        } else if (departId.equals("")) {
+
+            int total = teacherService.getAccountByIdAndName(roleId, userId, name);
+            List list = teacherService.getTeacherByIdAndName(roleId, userId, name, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据学院ID：" + departId + "和姓名：" + name + "组合查询教师，总数为" + total);
+        } else {
+            int total = teacherService.getAccountByDepart_idAndIdAndName(roleId, userId, name, departId);
+            List list = teacherService.getTeacherByDepart_idAndIdAndName(roleId, userId, name, departId, pageNum, pageSize);
+            data2.put("list", list);
+            data2.put("total", total);
+            data.put("data", data2);
+            dataMap.put("results", data);
+            dataMap.put("errorNo", "0");
+            System.out.println("现在是根据工号" + userId + "和姓名" + name + "和部门ID" + departId + "精准查询教师，总数为" + total);
         }
         return SUCCESS;
     }
+
     /**
-     *编辑教师的方法editTeacher
+     * 编辑教师的方法editTeacher
      */
     public String editTeacher() throws Exception {
-        if ((roleId.equals("1"))&&(!departId.equals("1"))) {
+        if ((roleId.equals("1")) && (!departId.equals("1"))) {
             dataMap.put("errorInfo", "系统管理员必须在系统管理部门！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
 
-        }else if ((roleId.equals("2")||roleId.equals("3"))&&departId.equals("1")) {
+        } else if ((roleId.equals("2") || roleId.equals("3")) && departId.equals("1")) {
             dataMap.put("errorInfo", "该角色不能在系统管理部门！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else{
-            IdCardUtil idCardInfo=new IdCardUtil(idCard);
-            if(idCardInfo.getProvince()==null)
-            {
+        } else {
+            IdCardUtil idCardInfo = new IdCardUtil(idCard);
+            if (idCardInfo.getProvince() == null) {
                 System.out.println("请输入有效的身份证信息！");
                 dataMap.put("errorInfo", "请输入有效的身份证信息！");
                 dataMap.put("results", data);
                 dataMap.put("errorNo", "1");
-            }
-            else
-            {
-                String cityName= idCardInfo.getCityNames(idCard);
-                String origin=idCardInfo.getProvince()+cityName;
-                teacherService.editTeacher(userId,name,roleId,departId,idCardInfo.getBirthday(),phone,idCardInfo.getGender(),idCard,address,state,political,professionId,description,filePath,qualification,subject,idCardInfo.getAge(),origin,nation,email);
-                System.out.println("现在是ID为"+id+"编辑工号为"+userId+"的教师，保存了路径为"+filePath+"的头像");
+            } else {
+                String cityName = idCardInfo.getCityNames(idCard);
+                String origin = idCardInfo.getProvince() + cityName;
+                teacherService.editTeacher(userId, name, roleId, departId, idCardInfo.getBirthday(), phone, idCardInfo.getGender(), idCard, address, state, political, professionId, description, filePath, qualification, subject, idCardInfo.getAge(), origin, nation, email);
+                System.out.println("现在是ID为" + id + "编辑工号为" + userId + "的教师，保存了路径为" + filePath + "的头像");
                 data.put("data", "1");
                 dataMap.put("results", data);
                 dataMap.put("errorNo", "0");
             }
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
+
     /**
-     *新增教师的方法saveTeacher
+     * 新增教师的方法saveTeacher
      */
     public String saveTeacher() throws Exception {
-        IdCardUtil idCardInfo=new IdCardUtil(idCard);
-         if ((roleId.equals("1"))&&(!departId.equals("1"))) {
+        IdCardUtil idCardInfo = new IdCardUtil(idCard);
+        if ((roleId.equals("1")) && (!departId.equals("1"))) {
             dataMap.put("errorInfo", "系统管理员必须在系统管理部门！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if ((roleId.equals("2")||roleId.equals("3"))&&departId.equals("1")) {
+        } else if ((roleId.equals("2") || roleId.equals("3")) && departId.equals("1")) {
             dataMap.put("errorInfo", "该角色不能在系统管理部门！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-       else if(!userId.matches("[0-9]+")||userId.length()<10){
+        } else if (!userId.matches("[0-9]+") || userId.length() < 10) {
             System.out.println("新增失败！工号为十位纯数字");
             dataMap.put("errorInfo", "工号为十位纯数字");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if (!teacherService.checkUser_id(userId)) {
+        } else if (!teacherService.checkUser_id(userId)) {
             System.out.println("工号不能重复");
             dataMap.put("errorInfo", "工号不能重复！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if(idCardInfo.getProvince()==null) {
+        } else if (idCardInfo.getProvince() == null) {
             System.out.println("请输入有效的身份证信息！");
             dataMap.put("errorInfo", "请输入有效的身份证信息！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else {
-            String cityName= idCardInfo.getCityNames(idCard);
-            String origin=idCardInfo.getProvince()+cityName;
-            if (teacherService.saveTeacher(userId, name, roleId, departId, idCardInfo.getBirthday(), phone, idCardInfo.getGender(), idCard, address, state, political, professionId, description,filePath,qualification,subject,idCardInfo.getAge(),origin,nation,email)) {
+        } else {
+            String cityName = idCardInfo.getCityNames(idCard);
+            String origin = idCardInfo.getProvince() + cityName;
+            if (teacherService.saveTeacher(userId, name, roleId, departId, idCardInfo.getBirthday(), phone, idCardInfo.getGender(), idCard, address, state, political, professionId, description, filePath, qualification, subject, idCardInfo.getAge(), origin, nation, email)) {
                 System.out.println("现在是系统管理员新增工号为" + userId + "的教师");
                 data.put("data", "1");
                 dataMap.put("results", data);
                 dataMap.put("errorNo", "0");
-            }
-            else{
+            } else {
                 dataMap.put("errorInfo", "新增失败，请重试！");
                 dataMap.put("results", data);
                 dataMap.put("errorNo", "1");
@@ -246,63 +229,64 @@ public class TeacherAction extends ActionSupport{
         }
         return SUCCESS;
     }
+
     /**
-     *删除教师的方法queryTeacher
+     * 删除教师的方法queryTeacher
      */
     public String deleteTeacher() {
-        if(ownUserId.equals(userId)){
+        if (ownUserId.equals(userId)) {
             System.out.println("无法删除管理员自己！");
             dataMap.put("errorInfo", "无法删除系统管理员本身！");
             dataMap.put("results", data);
             dataMap.put("errorNo", "1");
-        }
-        else if(teacherService.deleteTeacherById(userId)){
+        } else if (teacherService.deleteTeacherById(userId)) {
             data.put("data", "1");
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是删除工号为"+userId+"的教师");
+            System.out.println("现在是删除工号为" + userId + "的教师");
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
 
     /**
-     *重置密码的方法resetPwd
+     * 重置密码的方法resetPwd
      */
     public String resetPwd() {
-        if(teacherService.resetPwd(userId)){
+        if (teacherService.resetPwd(userId)) {
             data.put("data", "1");
             dataMap.put("results", data);
             dataMap.put("errorNo", "0");
-            System.out.println("现在是重置工号为"+userId+"的教师的密码为工号后六位");
+            System.out.println("现在是重置工号为" + userId + "的教师的密码为工号后六位");
         }
-        return  SUCCESS;
+        return SUCCESS;
     }
+
     /**
-     *导出各个学院教师名单
+     * 导出各个学院教师名单
      */
     public String exportTeacher() {
         try {
             HttpServletRequest req = ServletActionContext.getRequest();
             HttpServletResponse response = ServletActionContext.getResponse();
             OutputStream out = response.getOutputStream();
-            String fileName ="教师信息表.xls";
+            String fileName = "教师信息表.xls";
             response.setContentType("application/x-msdownload");
             response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, "UTF-8"));
-            List departList=departService.queryDepart();
+            List departList = departService.queryDepart();
             List<String> depaetID = new ArrayList();
             List<String> departName = new ArrayList();
-            for(int i=0;i<departList.size();i++){
-               UserDepartment userDepartment= (UserDepartment)departList.get(i);
+            for (int i = 0; i < departList.size(); i++) {
+                UserDepartment userDepartment = (UserDepartment) departList.get(i);
                 depaetID.add(userDepartment.getDepartmentId());
                 departName.add(userDepartment.getDepartmentName());
             }
             ExportExcelUtils eeu = new ExportExcelUtils();
             HSSFWorkbook workbook = new HSSFWorkbook();
-            for(int k=1;k<departList.size();k++){
-                List list = teacherService.exportTeacher("3",depaetID.get(k));
+            for (int k = 1; k < departList.size(); k++) {
+                List list = teacherService.exportTeacher("3", depaetID.get(k));
                 List<List<String>> data = new ArrayList<List<String>>();
                 for (int j = 0; j < list.size(); j++) {
-                    UserInfo u= (UserInfo)list.get(j);
+                    UserInfo u = (UserInfo) list.get(j);
                     List rowData = new ArrayList();
                     rowData.add(u.getUserId());
                     rowData.add(u.getName());
@@ -319,8 +303,8 @@ public class TeacherAction extends ActionSupport{
                     rowData.add(u.getLastLoginTime());
                     data.add(rowData);
                 }
-                String[] headers = { "工号", "姓名","性别","年龄" , "民族", "联系方式","电子邮件","出生日期", "身份证号" , "专业","籍贯", "住址","最后登录时间" };
-                    eeu.exportExcel(workbook,k-1, departName.get(k), headers, data, out);
+                String[] headers = {"工号", "姓名", "性别", "年龄", "民族", "联系方式", "电子邮件", "出生日期", "身份证号", "专业", "籍贯", "住址", "最后登录时间"};
+                eeu.exportExcel(workbook, k - 1, departName.get(k), headers, data, out);
             }
             workbook.write(out);
             out.close();
@@ -393,6 +377,7 @@ public class TeacherAction extends ActionSupport{
     public void setDepartId(String departId) {
         this.departId = departId;
     }
+
     @JSON(format = "yyyy-MM-dd")
     public Date getBorn() {
         return born;

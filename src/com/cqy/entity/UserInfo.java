@@ -30,7 +30,7 @@ public class UserInfo {
     private String headUrl;
     private int id;
     private int age;
-    private String lastLoginTime ;
+    private String lastLoginTime;
     private String qualification;
     private String subject;
     private String province;
@@ -47,6 +47,7 @@ public class UserInfo {
     public void setNation(String nation) {
         this.nation = nation;
     }
+
     @Basic
     @Column(name = "email")
     public String getEmail() {
@@ -86,6 +87,7 @@ public class UserInfo {
     public void setQualification(String qualification) {
         this.qualification = qualification;
     }
+
     @Basic
     @Column(name = "subject")
     public String getSubject() {
@@ -297,7 +299,7 @@ public class UserInfo {
                 Objects.equals(political, that.political) &&
                 Objects.equals(professionId, that.professionId) &&
                 Objects.equals(description, that.description) &&
-                Objects.equals(headUrl, that.headUrl)&&
+                Objects.equals(headUrl, that.headUrl) &&
                 Objects.equals(age, that.age) &&
                 Objects.equals(qualification, that.qualification) &&
                 Objects.equals(subject, that.subject) &&
@@ -308,6 +310,6 @@ public class UserInfo {
     @Override
     public int hashCode() {
 
-        return Objects.hash(userId, name, password, roleId, departId, born, phone, sex, address, idCard, state, political, professionId, description, headUrl, id,age,qualification,subject,province);
+        return Objects.hash(userId, name, password, roleId, departId, born, phone, sex, address, idCard, state, political, professionId, description, headUrl, id, age, qualification, subject, province);
     }
 }
